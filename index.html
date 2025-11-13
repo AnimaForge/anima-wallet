@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anima Wallet - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="#" class="logo">Anima Wallet</a>
+            <nav>
+                <ul>
+                    <li><a href="#wallet">Wallet</a></li>
+                    <li><a href="#transactions">Transactions</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="wallet">
+            <h2>My Wallet</h2>
+            <div class="wallet-card card">
+                <div class="balance">
+                    <p>Current Balance</p>
+                    <h3>14.75 ETH</h3>
+                </div>
+                <div class="indicator">
+                    <p>+2.1% (24h)</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="transactions">
+            <h2>Recent Transactions</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>From</th>
+                        <th>To</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>0xAb...7dE</td>
+                        <td>You</td>
+                        <td class="amount-in">+0.5 ETH</td>
+                        <td>2025-11-13 10:45</td>
+                    </tr>
+                    <tr>
+                        <td>You</td>
+                        <td>0xCd...3aB</td>
+                        <td class="amount-out">-1.2 ETH</td>
+                        <td>2025-11-13 09:12</td>
+                    </tr>
+                    <tr>
+                        <td>You</td>
+                        <td>0xEf...9fC</td>
+                        <td class="amount-out">-0.1 ETH</td>
+                        <td>2025-11-12 18:30</td>
+                    </tr>
+                     <tr>
+                        <td>0x12...b4E</td>
+                        <td>You</td>
+                        <td class="amount-in">+3.0 ETH</td>
+                        <td>2025-11-12 11:05</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="create-transaction">
+            <h2>Create Transaction</h2>
+            <form action="#" class="card">
+                <div class="form-group">
+                    <label for="recipient">Recipient Address</label>
+                    <input type="text" id="recipient" name="recipient" placeholder="0x...">
+                </div>
+                <div class="form-group">
+                    <label for="amount">Amount (ETH)</label>
+                    <input type="number" id="amount" name="amount" step="0.01" placeholder="0.0">
+                </div>
+                <div class="form-group">
+                    <label for="gas-fee">Gas Fee</label>
+                    <select id="gas-fee" name="gas-fee">
+                        <option value="slow">Slow (~0.001 ETH)</option>
+                        <option value="average" selected>Average (~0.003 ETH)</option>
+                        <option value="fast">Fast (~0.005 ETH)</option>
+                    </select>
+                </div>
+                <div class="form-buttons">
+                    <button type="submit" class="btn-primary">Send</button>
+                    <button type="reset" class="btn-secondary">Clear</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Anima Wallet by AnimaForge</p>
+        </div>
+    </footer>
+
+</body>
+</html>

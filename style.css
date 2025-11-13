@@ -1,0 +1,304 @@
+/* Importera typsnitt */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap' );
+
+/* Grundstyling */
+:root {
+    /* Mörkt läge som standard */
+    --color-bg: #0a0a0a;
+    --color-text: #e9ecef;
+    --color-card-bg: rgba(28, 28, 30, 0.7);
+    --color-border: #3a3a3c;
+    --color-primary: #0d6efd;
+    --color-primary-hover: #3d8bfd;
+    --color-secondary: #8e8e93;
+    --color-secondary-hover: #adadaf;
+    --color-accent-green: #28a745;
+    --color-accent-red: #dc3545;
+    --focus-glow: rgba(13, 110, 253, 0.5);
+    --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    --primary-hover-bg: rgba(13, 110, 253, 0.1); 
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        /* Ljust läge som alternativ */
+        --color-bg: #f8f9fa;
+        --color-text: #212529;
+        --color-card-bg: rgba(255, 255, 255, 0.85);
+        --color-border: #dee2e6;
+        --color-primary: #007bff;
+        --color-primary-hover: #0056b3;
+        --color-secondary: #6c757d;
+        --color-secondary-hover: #545b62;
+        --focus-glow: rgba(0, 123, 255, 0.25);
+        --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        --primary-hover-bg: rgba(0, 123, 255, 0.05);
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h2 {
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+section {
+    padding-top: 4rem;
+    margin-bottom: 3rem;
+}
+
+/* card styling */
+.card {
+    background-color: var(--color-card-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: var(--card-shadow);
+    backdrop-filter: blur(10px);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+    .card:hover {
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+    }
+}
+
+
+/* Navigation */
+header {
+    background-color: var(--color-card-bg);
+    border-bottom: 1px solid var(--color-border);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+header nav a {
+    text-decoration: none;
+    color: var(--color-text);
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+header nav a:hover {
+    color: var(--color-primary);
+}
+
+/* Wallet */
+.wallet-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.balance p {
+    margin-bottom: 0.25rem;
+    color: var(--color-secondary);
+}
+
+.balance h3 {
+    font-size: 2.5rem;
+}
+
+.indicator p {
+    color: var(--color-accent-green);
+    font-weight: bold;
+}
+
+/* Txn Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--color-card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+}
+
+th, td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+}
+
+thead {
+    background-color: rgba(255,255,255,0.05);
+}
+
+tbody tr {
+    transition: background-color 0.2s;
+}
+
+tbody tr:hover {
+    background-color: var(--primary-hover-bg);
+}
+
+.amount-in {
+    color: var(--color-accent-green);
+    font-weight: bold;
+}
+
+.amount-out {
+    color: var(--color-accent-red);
+    font-weight: bold;
+}
+
+/* Form */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-size: 1rem;
+}
+
+input:focus, select:focus, button:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px var(--focus-glow);
+}
+
+.form-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-hover);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-secondary);
+    border: 1px solid var(--color-border);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-border);
+    color: var(--color-text);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+    color: var(--color-secondary);
+}
+
+/* Responsivitet */
+@media (max-width: 600px) {
+    body {
+        font-size: 16px;
+    }
+    .container {
+        padding: 0 15px;
+    }
+    header .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .wallet-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    .balance h3 {
+        font-size: 2rem;
+    }
+    #transactions {
+        overflow-x: auto;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1100px;
+    }
+}
