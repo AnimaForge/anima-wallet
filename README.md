@@ -2,7 +2,7 @@
 
 Detta projekt är en inlämningsuppgift i kursen HTML & CSS. Målet var att bygga ett responsivt, visuellt gränssnitt för en fiktiv decentraliserad applikation (dApp). Fokus ligger på modern HTML5 och CSS3, inklusive responsiv design, CSS-variabler och stöd för ljust/mörkt läge.
 
-
+**Live Demo:** [https://animaforge.github.io/anima-wallet/](https://animaforge.github.io/anima-wallet/)
 
 ## Förhandsvisning
 
@@ -31,5 +31,6 @@ Resultaten från Lighthouse visar på en hög nivå av tillgänglighet och kodkv
 
 ![Skärmdump av Lighthouse-resultat](assets/lighthouse.png)
 
-
+*HTML-koden validerades utan fel via W3C Validator.*
+![Skärmdump av validator](assets/validator.png)
 
